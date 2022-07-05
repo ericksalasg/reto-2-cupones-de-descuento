@@ -28,6 +28,10 @@ const aplicarCupon = () =>{
             case cupones[2]:
                 descuentoAplicado = 30;
             break;
+            default:
+                alert('El cupón ingresado no es válido');
+                descuentoAplicado = 0;
+            break;
           }
     
     // funcion de la aplicacion del descuento
@@ -40,7 +44,9 @@ const aplicarCupon = () =>{
         precioConDescuentohtml.innerHTML = precioConDescuento;
         procentajeDescuentohtml.innerHTML =  `${descuento}%`;
         descuentohtml.innerHTML = `-$${descuentoPrice}`;
-        alertaHTML.innerHTML = 'CUPÓN APLICADO!!!'
+        if (descuento !== 0) {
+            alertaHTML.innerHTML = 'CUPÓN APLICADO!!!';
+        }else{}
     }
     
     calcularDescuentoCupon(precioProducto,descuentoAplicado);
